@@ -1,0 +1,13 @@
+version: "3.4"
+services:
+  nodejs: 
+    container_name: nodejs
+    image: aimvector/nodejs:1.0.0
+    build:
+      context: ./nodejs
+      target: debug
+    volumes:
+    - ./nodejs/src/:/work/src/
+    ports:
+      - 5002:5000
+      - 9229:9229
